@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix ต้นเเบบ กำลังเเก้x1",
+  "description": "สำนักงานนิติบุคคลอาคารชุด แบงค์คอก ฮอไรซอน รามคำแหง 60 (Bangkok Horizon Ram 60) - ระบบจัดการห้องชุด สัญญาเช่า ออกใบจอง และใบนำเสนอห้องชุด",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

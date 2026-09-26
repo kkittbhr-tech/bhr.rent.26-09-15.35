@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Apple Official Typography (apple.com/th)
+   - SF Pro TH (Thai Variable Font, weights 100-900)
+   - SF Pro Text (weights 400, 500, 600, 700)
+   - SF Pro Display (weights 400, 500, 600, 700, 800)
+   - Sukhumvit Set / -apple-system system fallbacks
+   ========================================================================== */
+
+/* SF Pro TH - Apple Thai Variable Font */
+@font-face {
+  font-family: 'SF Pro TH';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/SFProTH.woff2') format('woff2-variations'),
+       url('/fonts/SFProTH.woff2') format('woff2');
+}
+
+/* SF Pro Text */
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/sf-pro-text_regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/sf-pro-text_medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/sf-pro-text_semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/sf-pro-text_bold.woff2') format('woff2');
+}
+
+/* SF Pro Display */
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/sf-pro-display_regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/sf-pro-display_medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/sf-pro-display_semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/sf-pro-display_bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/sf-pro-display_heavy.woff2') format('woff2');
+}
+
+@theme {
+  --font-sans: "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "SF Pro Display", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "SF Pro Display", "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1c1917;
+    background-color: #f7f6f1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv01" on;
+    /* Ambient light mesh gradient to give depth and realistic refraction for glassmorphism */
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.06) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.6) 0px, transparent 100%),
+      radial-gradient(at 15% 75%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
+      radial-gradient(at 85% 85%, rgba(217, 119, 6, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Guarantee Apple typography across all text styles, numbers, and headings */
+  .font-display {
+    font-family: "SF Pro Display", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  }
+
+  .font-serif {
+    font-family: "SF Pro Display", "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  }
+
+  .font-mono {
+    font-family: "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-feature-settings: "tnum" 1 !important;
+  }
+
+  .font-sans {
+    font-family: "SF Pro Text", "SF Pro TH", "Sukhumvit Set", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  }
+
+  /* Glassmorphism primitives */
+  .glass-surface {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .glass-surface-subtle {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .glass-dark-surface {
+    background: rgba(28, 25, 23, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* Physics-based cascading drop animation for room cards on desktop/computer screens */
+  @keyframes room-card-cascade-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-75px) scale(0.96);
+    }
+    55% {
+      opacity: 0.95;
+      transform: translateY(8px) scale(1.008);
+    }
+    78% {
+      transform: translateY(-3px) scale(0.998);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Applied to outer wrapper on computer screens */
+  @media (min-width: 768px) {
+    .animate-room-drop {
+      opacity: 0;
+      animation: room-card-cascade-drop 0.8s cubic-bezier(0.25, 1, 0.35, 1) forwards;
+      will-change: transform, opacity;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-room-drop {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* Interactive tactile micro-interactions */
+  .hover-card-elevate {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+  .hover-card-elevate:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08), 0 8px 12px -4px rgba(0, 0, 0, 0.04);
+  }
+  .hover-card-elevate:active {
+    transform: translateY(-2px);
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-page-break {
+    page-break-after: always;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  /* Specific rule when printing booking receipt: hide everything else and print only the receipt */
+  body.printing-booking-receipt * {
+    visibility: hidden;
+  }
+  body.printing-booking-receipt #booking-receipt-canvas,
+  body.printing-booking-receipt #booking-receipt-canvas * {
+    visibility: visible !important;
+  }
+  body.printing-booking-receipt #booking-receipt-canvas {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Specific rule when printing horizontal room flyer: landscape page, hide everything else and print only flyer */
+  body.printing-room-flyer {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  body.printing-room-flyer * {
+    visibility: hidden;
+  }
+  body.printing-room-flyer #horizontal-flyer-canvas,
+  body.printing-room-flyer #horizontal-flyer-canvas * {
+    visibility: visible !important;
+  }
+  body.printing-room-flyer #horizontal-flyer-canvas {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
